@@ -12,7 +12,7 @@ a serial console access to the Mikrotik device
 an OpenWRT modified image capable of wiping out BBT (bad block table)
 ```
 
-I will provide instructions to build such an image from scratch if necessary and also to create a TFTP server on an OpenWRT device with a USB connector but any TFTP server will do it.
+I will provide bellow instructions to build such an image from scratch if necessary, but it is already compiled in binary form in this repository.
 
 # Compiling a TFTP bootable ELF image
 On an Ubuntu 14.04 64 bit machine or VM with at least 16GB storage and 8GB RAM run the following commands:
