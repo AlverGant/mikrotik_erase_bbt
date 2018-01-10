@@ -1,3 +1,5 @@
+# Getting rid of false bad blocks on Mikrotik NAND devices
+
 Mikrotik NAND flash devices can grow their bad block table over time.
 When burning an OpenWRT image on top of flash and particularly if a micro SD card is inserted during the flasing operation, lots of bad blocks develop, usually rendering the device unusable, incapable even of returning to RouterOS. It is somewhat unclear to my why that happens but the answer lie in the electronics, maybe a timing issue on the bus which the CPU talks to the flash which is shared with the micro SD card.
 
