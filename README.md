@@ -60,8 +60,8 @@ DHCP boot
 If everything is fine with the TFTP server and Mikrotik hardware, it will boot OpenWRT and end up on prompt.
 Now erase the NAND flash:
 ```
-mtd erase -n /dev/mtd5
-mtd erase -n /dev/mtd6
+mtd -n erase /dev/mtd5
+mtd -n erase /dev/mtd6
 ```
 OK, now you are able to use the standard Mikrotik procedure to return to RouterOS, just don't forget to reset routerboot BIOS to PXE boot. It's even possible to install a brand new openWRT but I am not covering this here right now. VERY IMPORTANT, don't forget to remove the SD card during these procedures.
 
