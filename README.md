@@ -48,7 +48,8 @@ Now compile (this will take a long time):
 ```
 make -j"${nproc}" V=s
 ```
-If everything goes well, you will find the compiled images on **~/souce/bin/targets/ar71xx/mikrotik**
+If everything goes well, you will find the compiled images on **~/souce/bin/targets/ar71xx/mikrotik**.
+
 There copy **openwrt-ar71xx-mikrotik-vmlinux-lzma.elf** to your TFTP server
 
 Now looking at Mikrotik console, reboot it, interrupt boot on BIOS and select both options:
