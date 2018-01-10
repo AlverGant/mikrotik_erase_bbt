@@ -7,7 +7,7 @@ If that's the case, here are the instructions to repair it.
 
 First you will need:
 ```
-a TFTP server
+a TFTP server and a network cable connected to ETH1/POE on RouterBoard
 a serial console access to the Mikrotik device
 an OpenWRT modified image capable of wiping out BBT (bad block table)
 ```
