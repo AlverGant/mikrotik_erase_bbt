@@ -63,6 +63,6 @@ Now erase the NAND flash:
 mtd erase -N /dev/mtd5
 mtd erase -N /dev/mtd6
 ```
-OK, now you are able to use the standard Mikrotik procedure to return to RouterOS, just don't forget to reset routerboot BIOS to PXE boot. It's even possible to install a brand new RouterOS but I am not covering this here right now. VERY IMPORTANT, don't forget to remove the SD card during these procedures.
+OK, now you are able to use the standard Mikrotik procedure to return to RouterOS, just don't forget to reset routerboot BIOS to PXE boot. It's even possible to install a brand new openWRT but I am not covering this here right now. VERY IMPORTANT, don't forget to remove the SD card during these procedures.
 
 Good luck!
