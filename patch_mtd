@@ -1,0 +1,16 @@
+--- mtd.c	2018-01-09 22:14:55.466255430 -0200
++++ mtd_mod.c	2018-01-09 23:43:26.400303055 -0200
+@@ -120,11 +120,11 @@
+ 	if (mtdtype == MTD_NANDFLASH)
+ 	{
+ 		r = ioctl(fd, MEMGETBADBLOCK, &o);
+-		if (r < 0)
++		/*if (r < 0)
+ 		{
+ 			fprintf(stderr, "Failed to get erase block status\n");
+ 			exit(1);
+-		}
++		}*/
+ 	}
+ 	return r;
+ }
