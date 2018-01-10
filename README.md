@@ -48,7 +48,7 @@ Now compile (this will take a long time, for me it was half an hour):
 ```
 make -j"${nproc}" V=s
 ```
-If everything goes well, you will find the compiled images on **~/souce/bin/targets/ar71xx/mikrotik**.
+If everything goes well, you will find the compiled images on **~/archive/bin/ar71xx**.
 
 There copy **openwrt-ar71xx-mikrotik-vmlinux-lzma.elf** to your TFTP server
 
