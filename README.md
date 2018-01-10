@@ -44,8 +44,14 @@ Base System = +ca-certificate
 Network / File Transfer = +wget
 Utilities = +rbcfg
 ```
+Now put the provided **patch_mtd** on **~/archive/package/system/mtd/src** and right there do:
+```
+patch < patch_mtd
+```
+
 Now compile (this will take a long time, for me it was half an hour):
 ```
+cd ~/archive 
 make -j"${nproc}" V=s
 ```
 If everything goes well, you will find the compiled images on **~/archive/bin/ar71xx**.
