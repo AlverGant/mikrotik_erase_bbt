@@ -57,7 +57,7 @@ Now looking at Mikrotik console, reboot it, interrupt boot on BIOS and select bo
 Boot from ethernet and
 DHCP boot
 ```
-If everything is fine with the TFTP server and Mikrotik hardware, it will boot OpenWRT and end up on prompt
+If everything is fine with the TFTP server and Mikrotik hardware, it will boot OpenWRT and end up on prompt.
 Now erase the NAND flash:
 ```
 mtd erase -N /dev/mtd5
