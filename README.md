@@ -44,7 +44,7 @@ Base System = +ca-certificate
 Network / File Transfer = +wget
 Utilities = +rbcfg
 ```
-Now compile (this will take a long time):
+Now compile (this will take a long time, for me it was half an hour):
 ```
 make -j"${nproc}" V=s
 ```
