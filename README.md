@@ -1,9 +1,10 @@
 # Getting rid of false bad blocks on Mikrotik NAND devices
+## This has been tested on RB433/RB433AG/RB493G
 
-Mikrotik NAND flash devices can grow their bad block table over time.
-When burning an OpenWRT image directly on the flash and particularly if a micro SD card is inserted during the flashing operation, lots of bad blocks do develop, usually rendering the device unusable, incapable even of returning it to RouterOS. It is somewhat unclear to me why that happens but the answer lie in the electronics, maybe a timing issue on the bus in which the CPU talks to the flash, that bus is shared with the micro SD card.
+Mikrotik NAND flash devices can grow their bad block tables over time.
+When burning an OpenWRT image directly onto flash and, particularly if a micro SD card is inserted during the flashing operation, lots of false bad blocks do develop, eventually reaching a high percentage of the storage, rendering the device unusable, incapable even of returning it to RouterOS. It is somewhat unclear to me why this happens but the answer may lie in the electronics, maybe there is a timing issue on the bus which the CPU talks to the flash, that bus is shared with the SD card.
 
-If that's your case like mine, here are the instructions to repair it.
+If that's your case like it was mine, here are the instructions to repair it.
 
 First you will need:
 ```
@@ -49,21 +50,20 @@ Now put the provided **patch_mtd** on **~/archive/package/system/mtd/src** and r
 patch < patch_mtd
 ```
 
-Now compile (this will take a long time, for me it was half an hour):
+Now compile (this will take a long time, for me it took half an hour):
 ```
 cd ~/archive 
 make -j"${nproc}" V=s
 ```
-If everything goes well, you will find the compiled images on **~/archive/bin/ar71xx**.
+If everything goes well, you will find the compiled images on **~/archive/bin/ar71xx**
 
-There copy **openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf** to your TFTP server
+There, make a copy of **openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf** to your TFTP server
 
-Now looking at Mikrotik console, reboot it, interrupt boot on BIOS and select both options:
-```
-Boot from ethernet and
+Now at the Mikrotik console, power cycle it and press any key to interrupt boot on BIOS and select both options:``
+Boot from ethernet
 DHCP boot
 ```
-If everything is fine with the TFTP server and Mikrotik hardware, it will boot OpenWRT and end up on prompt.
+If everything is fine with the TFTP server and Mikrotik hardware, it will boot OpenWRT and end up on a prompt.
 Now erase the NAND flash:
 ```
 mtd -n erase /dev/mtd5
