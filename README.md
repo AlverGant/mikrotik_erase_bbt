@@ -63,7 +63,8 @@ If everything goes well, you will find the compiled images on **~/archive/bin/ar
 
 There, make a copy of **openwrt-ar71xx-mikrotik-vmlinux-initramfs.elf** to your TFTP server
 
-Now at the Mikrotik console, power cycle it and press any key to interrupt boot on BIOS and select both options:``
+Now at the Mikrotik console, power cycle it and press any key to interrupt boot on BIOS and select both options:
+```
 Boot from ethernet
 DHCP boot
 ```
