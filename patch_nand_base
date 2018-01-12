@@ -1,0 +1,17 @@
+--- nand_base.c	2017-11-24 05:30:05.000000000 -0200
++++ nand_base_mod.c	2018-01-12 11:52:28.172496828 -0200
+@@ -2755,12 +2755,12 @@
+ 
+ 	while (len) {
+ 		/* Check if we have a bad block, we do not erase bad blocks! */
+-		if (nand_block_checkbad(mtd, ((loff_t) page) <<
++		/*if (nand_block_checkbad(mtd, ((loff_t) page) <<
+ 					chip->page_shift, 0, allowbbt)) {
+ 			pr_warn("%s: attempt to erase a bad block at page 0x%08x\n",
+ 				    __func__, page);
+ 			instr->state = MTD_ERASE_FAILED;
+-			goto erase_exit;
++			goto erase_exit;*/
+ 		}
+ 
+ 		/*
