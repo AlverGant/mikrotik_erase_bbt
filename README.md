@@ -49,6 +49,10 @@ Now put the provided **patch_mtd** on **~/archive/package/system/mtd/src** and r
 ```
 patch < patch_mtd
 ```
+And put provided **patch_nand_base** on **~/archive/build_dir/target-mips_34kc_uClibc-0.9.33.2/linux-ar71xx_mikrotik/linux-3.18.84/drivers/mtd/nand** and patch nand driver
+```
+patch < patch_nand_base
+```
 
 Now compile (this will take a long time, for me it took half an hour):
 ```
