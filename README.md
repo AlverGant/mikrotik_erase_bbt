@@ -8,9 +8,9 @@ If that's your case like it was mine, here are the instructions to repair it.
 
 First you will need:
 ```
-a TFTP server and a network cable connected to ETH1/POE on RouterBoard
+a TFTP and DHCP server with a network cable connected to ETH1/POE on RouterBoard
 a serial console access to the Mikrotik device
-an OpenWRT modified image capable of wiping out BBT (bad block table)
+a (supplied) OpenWRT ELF modified image capable of wiping out BBT (bad block table)
 ```
 
 I will provide bellow instructions to build such an image from scratch if necessary, but it is already compiled in binary form in this repository.
@@ -76,5 +76,6 @@ mtd -n erase /dev/mtd5
 mtd -n erase /dev/mtd6
 ```
 OK, now you are able to use the standard Mikrotik procedure to return to RouterOS, just don't forget to reset routerboot BIOS to PXE boot. It's even possible to install a brand new openWRT but I am not covering this here right now. VERY IMPORTANT, don't forget to remove the SD card during these procedures.
+Also don't forget to repartition FLASH to just one partition; this can be acomplished from Mikrotik BIOS
 
 Good luck!
